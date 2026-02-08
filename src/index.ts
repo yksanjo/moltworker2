@@ -1,5 +1,5 @@
 /**
- * KimiDock - Kimi (Moonshot AI) on Cloudflare Sandbox
+ * 🌙🦖 KimiClaw - Kimi (Moonshot AI) on Cloudflare Sandbox
  *
  * This Worker runs a personal AI assistant powered by Kimi (Moonshot AI) in a 
  * Cloudflare Sandbox container. It proxies all requests to the Gateway's web UI 

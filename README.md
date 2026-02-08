@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌙 KimiDock 
+# 🌙🦖 KimiClaw 
 ### *Your Personal AI Agent, Powered by Moonshot AI on Cloudflare*
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/yksanjo/moltworker2)
@@ -18,11 +18,11 @@
 
 ---
 
-## ✨ What is KimiDock?
+## ✨ What is KimiClaw? 🦖
 
-**KimiDock** is a **serverless AI agent platform** that runs [Kimi](https://platform.moonshot.cn/) (Moonshot AI's powerful LLM) on [Cloudflare's edge infrastructure](https://developers.cloudflare.com/sandbox/). 
+**KimiClaw** 🦖 is a **serverless AI agent platform** that runs [Kimi](https://platform.moonshot.cn/) (Moonshot AI's powerful LLM) on [Cloudflare's edge infrastructure](https://developers.cloudflare.com/sandbox/). 
 
-Think of it as your personal AI assistant that:
+Think of it as your personal AI claw-sistant that 🦖:
 - 🧠 **Runs Kimi (Moonshot AI)** — China's most capable LLM, now globally accessible
 - 💬 **Connects everywhere** — Telegram, Discord, Slack, WhatsApp, Web UI
 - 🔒 **Secure by design** — Device pairing, Cloudflare Access, encrypted storage
@@ -37,8 +37,8 @@ Think of it as your personal AI assistant that:
 
 ```bash
 # 1. Clone & install
-git clone https://github.com/yksanjo/moltworker2.git kimidock
-cd kimidock && npm install
+git clone https://github.com/yksanjo/moltworker2.git kimiclaw
+cd kimiclaw && npm install
 
 # 2. Set your Kimi API key (get one at platform.moonshot.cn)
 npx wrangler secret put KIMI_API_KEY
@@ -194,7 +194,7 @@ KIMI_API_KEY=your-key-here  # Your Kimi API key
 
 ## 🛡️ Security
 
-KimiDock implements multiple security layers:
+KimiClaw 🦖 implements multiple security layers:
 
 1. **🔐 Gateway Token** — Required to access the Control UI
 2. **👤 Cloudflare Access** — SSO/authentication for admin routes
@@ -204,9 +204,9 @@ KimiDock implements multiple security layers:
 
 ---
 
-## 🌟 Why KimiDock?
+## 🌟 Why KimiClaw? 🦖
 
-| Feature | KimiDock | Self-Hosted | Other Cloud |
+| Feature | KimiClaw 🦖 | Self-Hosted | Other Cloud |
 |---------|----------|-------------|-------------|
 | **Setup Time** | ⏱️ 5 minutes | 🕐 Hours | ⏱️ 15 minutes |
 | **Maintenance** | 🚫 None | 🔧 Constant | 🚫 None |
@@ -299,8 +299,8 @@ MIT License — see [LICENSE](LICENSE) file.
 
 <div align="center">
 
-**⭐ Star this repo if you find it helpful!**
+**⭐ Star this repo if you find it helpful! ⭐**
 
-Made with ❤️ by [@yksanjo](https://github.com/yksanjo)
+Made with ❤️🦖 by [@yksanjo](https://github.com/yksanjo)
 
 </div>
