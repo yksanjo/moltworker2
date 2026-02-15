@@ -1,9 +1,9 @@
 {
-  "name": "kimiclaw",
+  "name": "moltbot-anthropic",
   "version": "1.0.0",
   "type": "module",
   "private": false,
-  "description": "🌙🦖 KimiClaw - Deploy your personal AI agent powered by Kimi (Moonshot AI) on Cloudflare Sandbox. Zero servers, zero maintenance, just intelligence."
+  "description": "🌙🦖 KimiClaw - Deploy your personal AI agent powered by Kimi (Moonshot AI) on Cloudflare Sandbox. Zero servers, zero maintenance, just intelligence.",
   "scripts": {
     "build": "vite build",
     "deploy": "npm run build && wrangler deploy",

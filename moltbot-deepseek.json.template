@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "name": "moltbot-deepseek",
+    "version": "1.0.0",
+    "description": "Moltbot powered by DeepSeek - Most affordable AI for coding and reasoning"
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "apiKey": "${DEEPSEEK_API_KEY}",
+        "api": "openai",
+        "baseURL": "${DEEPSEEK_BASE_URL:-https://api.deepseek.com}",
+        "models": [
+          {
+            "id": "deepseek-chat",
+            "name": "DeepSeek Chat",
+            "description": "DeepSeek's primary chat model - excellent for coding",
+            "contextWindow": 128000,
+            "maxTokens": 16384
+          },
+          {
+            "id": "deepseek-coder",
+            "name": "DeepSeek Coder",
+            "description": "Specialized for coding tasks",
+            "contextWindow": 128000,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/deepseek-chat",
+        "fallbacks": ["openai/deepseek-coder"]
+      },
+      "models": {
+        "openai/deepseek-chat": {
+          "alias": "DeepSeek Chat",
+          "costOptimized": true
+        },
+        "openai/deepseek-coder": {
+          "alias": "DeepSeek Coder",
+          "costOptimized": true
+        }
+      },
+      "workspace": "/root/clawd"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local"
+  }
+}

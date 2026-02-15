@@ -17,6 +17,20 @@
   "build": {
     "command": "npm run build"
   },
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "Sandbox",
+        "name": "Sandbox"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "new_sqlite_classes": ["Sandbox"],
+      "tag": "v1"
+    }
+  ],
   "r2_buckets": [
     {
       "binding": "MOLTBOT_BUCKET",

@@ -51,23 +51,11 @@ export function createAccessMiddleware(options: AccessMiddlewareOptions) {
     const teamDomain = c.env.CF_ACCESS_TEAM_DOMAIN;
     const expectedAud = c.env.CF_ACCESS_AUD;
 
-    // Check if CF Access is configured
+    // Skip auth if CF Access is not configured (gateway token still required)
     if (!teamDomain || !expectedAud) {
-      if (type === 'json') {
-        return c.json({
-          error: 'Cloudflare Access not configured',
-          hint: 'Set CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD environment variables',
-        }, 500);
-      } else {
-        return c.html(`
-          <html>
-            <body>
-              <h1>Admin UI Not Configured</h1>
-              <p>Set CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD environment variables.</p>
-            </body>
-          </html>
-        `, 500);
-      }
+      console.log('[AUTH] CF Access not configured, skipping auth (gateway token still required)');
+      c.set('accessUser', { email: 'anonymous@gateway', name: 'Gateway User' });
+      return next();
     }
 
     // Get JWT

@@ -1,0 +1,60 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "moltworker-fresh",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "build": {
+    "command": "npm run build"
+  },
+  "containers": [
+    {
+      "class_name": "Sandbox",
+      "image": "registry.cloudflare.com/a1ede525e60bbe56f5af3960df6e34c7/openclawsandbox-sandbox@sha256:5f2e95c23c041f2c9e3c0cb318d420ef00dfdde2ad8df688d13a38e1e14bac83",
+      "instance_type": "standard-4",
+      "max_instances": 1
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MOLTBOT_BUCKET",
+      "bucket_name": "moltbot-data-fresh",
+      "preview_bucket_name": "moltbot-data-fresh"
+    },
+    {
+      "binding": "PRIVACY_BUCKET",
+      "bucket_name": "moltbot-privacy-fresh",
+      "preview_bucket_name": "moltbot-privacy-fresh"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "Sandbox",
+        "name": "Sandbox"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "new_sqlite_classes": ["Sandbox"],
+      "tag": "v1"
+    }
+  ],
+  "triggers": {
+    "crons": ["*/5 * * * *"]
+  },
+  "browser": {
+    "binding": "BROWSER"
+  }
+}
